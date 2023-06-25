@@ -170,6 +170,8 @@ public class InwardRegisterController {
 		return listDto;
 	}
 	
+	
+	//Report API 1
 	@GetMapping("/report/supplier/{supplierId}")
 	public ResponseEntity<?> inwardReportBySupplier(@PathVariable int supplierId) {
 		List<InwardRegister> list;
@@ -187,10 +189,6 @@ public class InwardRegisterController {
 			dto.setProductPrice(entry.getProduct().getPrice());
 			dto.setSupplierName(entry.getSupplier().getName());
 			dto.setSupplierCity(entry.getSupplier().getCity());
-			dto.setQuantity(entry.getQuantity());
-			dto.setInvoiceNumber(entry.getInvoiceNumber());
-			dto.setReceiptNo(entry.getReceiptNo());
-			dto.setDateOfSupply(entry.getDateOfSupply());
 			listDto.add(dto);
 		});
 		

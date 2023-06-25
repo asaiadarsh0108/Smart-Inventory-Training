@@ -130,6 +130,8 @@ public class OutwardRegisterController {
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
+	
+	//REPORT API 3
 	@GetMapping("/report")
 	public List<OutwardRegisterDto> outwardReport() {
 		List<OutwardRegister> list = outwardRegisterService.getAll();
@@ -141,18 +143,14 @@ public class OutwardRegisterController {
 			dto.setGodownLocation(entry.getGodown().getLocation());
 			dto.setGodownManager(entry.getGodown().getManager().getName());
 			dto.setQuantity(entry.getQuantity());
-			dto.setInvoiceNumber(entry.getInvoiceNumber());
-			dto.setPurpose(entry.getPurpose());
-			dto.setReceiptNo(entry.getReceiptNo());
-			dto.setBillValue(entry.getBillValue());
-			dto.setDeliveredTo(entry.getDeliveredTo());
-			dto.setDateOfDelivery(entry.getDateOfDelivery());
 			listDto.add(dto);
 		});
 		
 		return listDto;
 	}
 	
+	
+	//REPORT API 2: 
 	@GetMapping("/report/customer/{customerId}")
 	public ResponseEntity<?> outwardReportByCustomer(@PathVariable int customerId) {
 		List<CustomerProduct> list;

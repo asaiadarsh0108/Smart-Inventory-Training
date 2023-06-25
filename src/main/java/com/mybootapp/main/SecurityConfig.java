@@ -56,7 +56,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.POST, "/employee/add/{managerId}").hasAuthority("ADMIN")
 			.antMatchers(HttpMethod.PUT, "/employee/update/{id}/{managerId}").hasAuthority("ADMIN")
 			.antMatchers(HttpMethod.DELETE, "/employee/delete/{id}").hasAuthority("ADMIN")
+			//Report getting all the products supplied by the supplier
+			.antMatchers(HttpMethod.GET, "/inwardregister/report/supplier/{supplierId}").hasAuthority("ADMIN")
+			//Report API to generate List of all the godowns Details 
 			.antMatchers(HttpMethod.GET, "/godown/report").hasAuthority("ADMIN")
+			//Report API to get the Products purachased by customer
+			.antMatchers(HttpMethod.GET, "/outwardregister/report/customer/{customerId}").hasAuthority("ADMIN")
+			//Report API to get Outwardregisters in particular format.
 			.antMatchers(HttpMethod.GET, "/outwardregister/report").hasAuthority("ADMIN")
 			.anyRequest().permitAll()
 			.and()

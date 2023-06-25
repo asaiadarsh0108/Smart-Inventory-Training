@@ -12,10 +12,6 @@ public class InwardRegisterBySupplierDto {
 	private double productPrice;
 	private String supplierName;
 	private String supplierCity;
-	private int quantity;
-	private String invoiceNumber;
-	private String receiptNo;
-	private LocalDate dateOfSupply;
 	
 	public String getProductTitle() {
 		return productTitle;
@@ -40,30 +36,6 @@ public class InwardRegisterBySupplierDto {
 	}
 	public void setSupplierCity(String supplierCity) {
 		this.supplierCity = supplierCity;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	public String getInvoiceNumber() {
-		return invoiceNumber;
-	}
-	public void setInvoiceNumber(String invoiceNumber) {
-		this.invoiceNumber = invoiceNumber;
-	}
-	public String getReceiptNo() {
-		return receiptNo;
-	}
-	public void setReceiptNo(String receiptNo) {
-		this.receiptNo = receiptNo;
-	}
-	public LocalDate getDateOfSupply() {
-		return dateOfSupply;
-	}
-	public void setDateOfSupply(LocalDate dateOfSupply) {
-		this.dateOfSupply = dateOfSupply;
 	}
 	public double getProductPrice() {
 		return productPrice;
